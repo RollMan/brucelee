@@ -1,6 +1,7 @@
 import pygame
 import time
 import pygame.midi
+from pygame.locals import *
 
 pygame.init()
 pygame.display.set_mode([100,100])
@@ -12,6 +13,7 @@ player= pygame.midi.Output(2)
 player.set_instrument(48,1)
 
 major=[0,4,7,12]
+keys_horizontal = [K_a, K_w, K_s, K_e, K_d, K_f, K_t, K_g, K_y, K_h, K_u, K_j, K_k]
 
 
 def go(note):
@@ -46,11 +48,11 @@ while True:
             if event.key == pygame.K_q:
                 del player
                 end()
-            if event.key == pygame.K_a:
-                print("K_a downed")
-                chord_on(def_note, major)
+            for i, k in enumerate(keys_horizontal):
+                if event.key == k:
+                    chord_on(def_note + i, major)
         if event.type == pygame.KEYUP:
-            if event.key == pygame.K_a:
-                print("K_a uped")
-                chord_off(def_note, major)
+            for i, k in enumerate(keys_horizontal):
+                if event.key == k:
+                    chord_off(def_note + i, major)
 

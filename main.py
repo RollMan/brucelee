@@ -5,8 +5,7 @@ from pygame.locals import *
 
 pygame.init()
 pygame.display.set_mode([100,100])
-            d r #m m f #s s r #s
-c_note_table=[0, 2, 3, 4, 6, 9, 10, 12, 13]
+c_blues_table=[0, 2, 3, 4, 5, 6, 7, 8, 9]
 
 pygame.midi.init()
 print(pygame.midi.get_count())

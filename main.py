@@ -5,7 +5,7 @@ from pygame.locals import *
 
 pygame.init()
 pygame.display.set_mode([100,100])
-
+c_blues_table=[0, 2, 3, 4, 5, 6, 7, 8, 9]
 
 pygame.midi.init()
 print(pygame.midi.get_count())
@@ -15,8 +15,6 @@ inst = 0
 player.set_instrument(inst,1)
 
 major=[0,4,7,12]
-keys_horizontal = [K_a, K_w, K_s, K_e, K_d, K_f, K_t, K_g, K_y, K_h, K_u, K_j, K_k]
-
 
 def go(note):
     player.note_on(note, 127,1)
@@ -41,6 +39,7 @@ def end():
     pygame.quit()
 
 def_note = 60
+def_note_a = def_note + 6
 
 class Lefthand:
 
@@ -88,9 +87,78 @@ while True:
                 inst = 0
                 player.set_instrument(inst, 1)
 
-
-            pass
         if event.type == pygame.KEYUP:
             lefthand.note_onoff(event.key, False)
-            pass
-
+            # c blues keymap
+            if event.key == K_r:
+                player.note_on(def_note + c_blues_table[0], 127, 1)
+            if event.key == K_t:
+                player.note_on(def_note + c_blues_table[1], 127, 1)
+            if event.key == K_y:
+                player.note_on(def_note + c_blues_table[2], 127, 1)
+            if event.key == K_u:
+                player.note_on(def_note + c_blues_table[3], 127, 1)
+            if event.key == K_i:
+                player.note_on(def_note + c_blues_table[4], 127, 1)
+            if event.key == K_o:
+                player.note_on(def_note + c_blues_table[5], 127, 1)
+            if event.key == K_p:
+                player.note_on(def_note + c_blues_table[6], 127, 1)
+            if event.key == K_LEFTBRACKET:
+                player.note_on(def_note + c_blues_table[7], 127, 1)
+            if event.key == K_RIGHTBRACKET:
+                player.note_on(def_note + c_blues_table[8], 127, 1)
+             # a blues keymap
+            if event.key == K_f:
+                player.note_on(def_note_a + c_blues_table[0], 127, 1)
+            if event.key == K_g:
+                player.note_on(def_note_a + c_blues_table[1], 127, 1)
+            if event.key == K_h:
+                player.note_on(def_note_a + c_blues_table[2], 127, 1)
+            if event.key == K_j:
+                player.note_on(def_note_a + c_blues_table[3], 127, 1)
+            if event.key == K_k:
+                player.note_on(def_note_a + c_blues_table[4], 127, 1)
+            if event.key == K_l:
+                player.note_on(def_note_a + c_blues_table[5], 127, 1)
+            if event.key == K_SEMICOLON:
+                player.note_on(def_note_a + c_blues_table[6], 127, 1)
+            if event.key == K_QUOTE:
+                player.note_on(def_note_a + c_blues_table[7], 127, 1)
+        if event.type == pygame.KEYUP:
+            # c blues keymap
+            if event.key == K_r:
+                player.note_off(def_note + c_blues_table[0], 127, 1)
+            if event.key == K_t:
+                player.note_off(def_note + c_blues_table[1], 127, 1)
+            if event.key == K_y:
+                player.note_off(def_note + c_blues_table[2], 127, 1)
+            if event.key == K_u:
+                player.note_off(def_note + c_blues_table[3], 127, 1)
+            if event.key == K_i:
+                player.note_off(def_note + c_blues_table[4], 127, 1)
+            if event.key == K_o:
+                player.note_off(def_note + c_blues_table[5], 127, 1)
+            if event.key == K_p:
+                player.note_off(def_note + c_blues_table[6], 127, 1)
+            if event.key == K_LEFTBRACKET:
+                player.note_off(def_note + c_blues_table[7], 127, 1)
+            if event.key == K_RIGHTBRACKET:
+                player.note_off(def_note + c_blues_table[8], 127, 1)
+              # a blues keymap
+            if event.key == K_f:
+                player.note_off(def_note_a + c_blues_table[0], 127, 1)
+            if event.key == K_g:
+                player.note_off(def_note_a + c_blues_table[1], 127, 1)
+            if event.key == K_h:
+                player.note_off(def_note_a + c_blues_table[2], 127, 1)
+            if event.key == K_j:
+                player.note_off(def_note_a + c_blues_table[3], 127, 1)
+            if event.key == K_k:
+                player.note_off(def_note_a + c_blues_table[4], 127, 1)
+            if event.key == K_l:
+                player.note_off(def_note_a + c_blues_table[5], 127, 1)
+            if event.key == K_SEMICOLON:
+                player.note_off(def_note_a + c_blues_table[6], 127, 1)
+            if event.key == K_QUOTE:
+                player.note_off(def_note_a + c_blues_table[7], 127, 1)

@@ -15,8 +15,6 @@ inst = 0
 player.set_instrument(inst,1)
 
 major=[0,4,7,12]
-keys_horizontal = [K_a, K_w, K_s, K_e, K_d, K_f, K_t, K_g, K_y, K_h, K_u, K_j, K_k]
-
 
 def go(note):
     player.note_on(note, 127,1)
@@ -60,7 +58,16 @@ while True:
                 inst = 0
                 player.set_instrument(inst, 1)
 
-            pass
+            if event.key == K_r:
+                player.note_on(def_note + 1, 127, 1)
+            if event.key == K_t:
+                player.note_on(def_note + 2, 127, 1)
+            if event.key == K_y:
+                player.note_on(def_note + 3, 127, 1)
+            if event.key == K_u:
+                player.note_on(def_note + 4, 127, 1)
+            if event.key == K_i:
+                player.note_on(def_note + 5, 127, 1)
         if event.type == pygame.KEYUP:
             pass
 

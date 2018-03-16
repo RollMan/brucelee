@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "test.md" > .gitignore
+gibo Vim Emacs >> .gitignore

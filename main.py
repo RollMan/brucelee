@@ -90,6 +90,7 @@ while True:
         if event.type == pygame.KEYUP:
             lefthand.note_onoff(event.key, False)
             # c blues keymap
+        if event.type == pygame.KEYDOWN:
             if event.key == K_r:
                 player.note_on(def_note + c_blues_table[0], 127, 1)
             if event.key == K_t:

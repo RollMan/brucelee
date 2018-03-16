@@ -42,6 +42,28 @@ def end():
 
 def_note = 60
 
+class Lefthand:
+    self.major = [0, 7]
+    self.scale = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
+    self.top = [K_q, K_w, K_e]
+    self.med = [K_a, K_s, K_d]
+    self.bot = [K_z, K_x, K_c]
+    self.back = [def_note + self.scale['C'], def_note + self.scale['F'],  def_note + self.scale['G']]
+
+    def __init__(self):
+        pass
+
+    def note_onoff(self, key, on):
+        switch_note = player.note_on if on == True else player.note_off
+        for i, k in top:
+            if k == key:
+                switch_note(self.back[i], 127, 1)
+        
+        for i, k in med:
+            if k == key:
+                switch_note(self.back[i] + 2, 127, 1)
+
+
 print("ready")
 
 while True:
@@ -59,6 +81,7 @@ while True:
             if event.key == K_RIGHT:
                 inst = 0
                 player.set_instrument(inst, 1)
+
 
             pass
         if event.type == pygame.KEYUP:

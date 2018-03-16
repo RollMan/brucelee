@@ -45,12 +45,13 @@ def_note = 60
 class Lefthand:
 
     def __init__(self):
+        self.def_note = 60 - 24
         self.major = [0, 7]
         self.scale = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
         self.top = [K_q, K_w, K_e]
         self.med = [K_a, K_s, K_d]
         self.bot = [K_z, K_x, K_c]
-        self.back = [def_note + self.scale['C'], def_note + self.scale['F'],  def_note + self.scale['G']]
+        self.back = [self.def_note + self.scale['C'], self.def_note + self.scale['F'],  self.def_note + self.scale['G']]
         pass
 
     def note_onoff(self, key, on):

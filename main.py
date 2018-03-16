@@ -68,6 +68,31 @@ while True:
                 player.note_on(def_note + 4, 127, 1)
             if event.key == K_i:
                 player.note_on(def_note + 5, 127, 1)
+            if event.key == K_o:
+                player.note_on(def_note + 6, 127, 1)
+            if event.key == K_p:
+                player.note_on(def_note + 7, 127, 1)
+            if event.key == K_LEFTBRACKET:
+                player.note_on(def_note + 8, 127, 1)
+            if event.key == K_RIGHTBRACKET:
+                player.note_on(def_note + 9, 127, 1)
         if event.type == pygame.KEYUP:
-            pass
-
+            if event.key == K_r:
+                player.note_off(def_note + 1, 127, 1)
+            if event.key == K_t:
+                player.note_off(def_note + 2, 127, 1)
+            if event.key == K_y:
+                player.note_off(def_note + 3, 127, 1)
+            if event.key == K_u:
+                player.note_off(def_note + 4, 127, 1)
+            if event.key == K_i:
+                player.note_off(def_note + 5, 127, 1)
+            if event.key == K_o:
+                player.note_off(def_note + 6, 127, 1)
+            if event.key == K_p:
+                player.note_off(def_note + 7, 127, 1)
+            if event.key == K_LEFTBRACKET:
+                player.note_off(def_note + 8, 127, 1)
+            if event.key == K_RIGHTBRACKET:
+                player.note_off(def_note + 9, 127, 1)
+ 

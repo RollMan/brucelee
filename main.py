@@ -39,7 +39,7 @@ def end():
     pygame.quit()
 
 def_note = 60
-def_note_c = def_note + 6
+def_note_a = def_note + 6
 
 print("ready")
 

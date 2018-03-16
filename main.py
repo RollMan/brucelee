@@ -80,7 +80,7 @@ while True:
         if event.type == pygame.KEYUP:
             # c blues keymap
             if event.key == K_r:
-                player.note_off(def_note + c_blues_table[8], 127, 1)
+                player.note_off(def_note + c_blues_table[0], 127, 1)
             if event.key == K_t:
                 player.note_off(def_note + c_blues_table[1], 127, 1)
             if event.key == K_y:

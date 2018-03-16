@@ -63,7 +63,7 @@ class Lefthand:
         
         for i, k in enumerate(self.med):
             if k == key:
-                switch_note(self.back[i] + 2, 127, 1)
+                switch_note(self.back[i], 127, 1)
                 switch_note(self.back[i] + major[1] + 2, 127, 1)
 
 

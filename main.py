@@ -128,8 +128,8 @@ while True:
                 player.note_off(def_note_a + c_blues_table[4], 127, 1)
             if event.key == K_l:
                 player.note_off(def_note_a + c_blues_table[5], 127, 1)
-            if event.key == K_COLON:
+            if event.key == K_SEMICOLON:
                 player.note_off(def_note_a + c_blues_table[6], 127, 1)
-            if event.key == K_QUOTEDBL:
+            if event.key == K_QUOTE:
                 player.note_off(def_note_a + c_blues_table[7], 127, 1)
  

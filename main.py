@@ -10,7 +10,9 @@ pygame.display.set_mode([100,100])
 pygame.midi.init()
 print(pygame.midi.get_count())
 player= pygame.midi.Output(2)
-player.set_instrument(48,1)
+# player.set_instrument(48,1)
+inst = 0
+player.set_instrument(inst,1)
 
 major=[0,4,7,12]
 keys_horizontal = [K_a, K_w, K_s, K_e, K_d, K_f, K_t, K_g, K_y, K_h, K_u, K_j, K_k]
@@ -48,6 +50,16 @@ while True:
             if event.key == pygame.K_q:
                 del player
                 end()
+            if event.key == K_UP:
+                inst = inst + 1
+                player.set_instrument(inst,1)
+            if event.key == K_DOWN:
+                inst = max(0, inst - 1)
+                player.set_instrument(inst,1)
+            if event.key == K_RIGHT:
+                inst = 0
+                player.set_instrument(inst, 1)
+
             for i, k in enumerate(keys_horizontal):
                 if event.key == k:
                     chord_on(def_note + i, major)

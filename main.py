@@ -60,11 +60,7 @@ while True:
                 inst = 0
                 player.set_instrument(inst, 1)
 
-            for i, k in enumerate(keys_horizontal):
-                if event.key == k:
-                    chord_on(def_note + i, major)
+            pass
         if event.type == pygame.KEYUP:
-            for i, k in enumerate(keys_horizontal):
-                if event.key == k:
-                    chord_off(def_note + i, major)
+            pass
 

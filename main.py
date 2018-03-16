@@ -14,7 +14,7 @@ player= pygame.midi.Output(2)
 inst = 0
 player.set_instrument(inst,1)
 
-major=[0,4,7,12]
+# major=[0,4,7,12]
 keys_horizontal = [K_a, K_w, K_s, K_e, K_d, K_f, K_t, K_g, K_y, K_h, K_u, K_j, K_k]
 
 
@@ -45,7 +45,7 @@ def_note = 60
 class Lefthand:
 
     def __init__(self):
-        self.def_note = 60 - 24
+        self.def_note = 60 - 12
         self.major = [0, 7]
         self.scale = {'C': 0, 'D': 2, 'E': 4, 'F': 5, 'G': 7, 'A': 9, 'B': 11}
         self.top = [K_q, K_w, K_e]
@@ -58,13 +58,13 @@ class Lefthand:
         switch_note = player.note_on if on == True else player.note_off
         for i, k in enumerate(self.top):
             if k == key:
-                #switch_note(self.back[i], 127, 1)
-                switch_note(self.back[i] + major[1], 127, 1)
+                switch_note(self.back[i], 127, 1)
+                switch_note(self.back[i] + self.major[1], 127, 1)
         
         for i, k in enumerate(self.med):
             if k == key:
-                #switch_note(self.back[i], 127, 1)
-                switch_note(self.back[i] + major[1] + 2, 127, 1)
+                switch_note(self.back[i], 127, 1)
+                switch_note(self.back[i] + self.major[1] + 2, 127, 1)
 
 
 print("ready")

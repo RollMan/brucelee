@@ -57,12 +57,12 @@ class Lefthand:
         switch_note = player.note_on if on == True else player.note_off
         for i, k in enumerate(self.top):
             if k == key:
-                #switch_note(self.back[i], 127, 1)
+                switch_note(self.back[i], 127, 1)
                 switch_note(self.back[i] + major[1], 127, 1)
         
         for i, k in enumerate(self.med):
             if k == key:
-                #switch_note(self.back[i], 127, 1)
+                switch_note(self.back[i], 127, 1)
                 switch_note(self.back[i] + major[1] + 2, 127, 1)
 
 
